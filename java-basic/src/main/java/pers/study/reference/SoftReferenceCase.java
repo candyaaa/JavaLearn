@@ -4,6 +4,7 @@ import java.lang.ref.SoftReference;
 
 /**
  * 软引用：内存不足时会进行清除
+ * Xmx20M
  */
 public class SoftReferenceCase {
     public static void main(String[] args) throws InterruptedException {
