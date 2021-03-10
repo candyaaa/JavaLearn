@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
  * jps
  * jstack 【pid】     view thread status
  */
-public class ThreadState {
+class ThreadState {
     public static void main(String[] args) {
         new Thread(new TimeWaiting(), "TimeWaitingThread").start();
         new Thread(new Waiting(), "WaitingThread").start();
