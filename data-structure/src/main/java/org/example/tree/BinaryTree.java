@@ -122,5 +122,26 @@ public class BinaryTree<T> {
             result.add(data);
             return result;
         }
+
+        public Node preOrderSearch(T nodeData){
+            if (this.data == nodeData){
+                return this;
+            }
+            Node resultNode = null;
+            if (this.leftNode != null){
+                resultNode = this.leftNode.preOrderSearch(nodeData);
+            }
+            if (resultNode != null){
+                return resultNode;
+            }
+
+            if (this.rightNode != null){
+                resultNode = this.rightNode.preOrderSearch(nodeData);
+            }
+            if (resultNode != null){
+                return resultNode;
+            }
+            return null;
+        }
     }
 }
