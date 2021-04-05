@@ -1,4 +1,4 @@
-package org.example.spring.beanfactorypostprocessor;
+package org.example.spring.life.beanfactorypostprocessor;
 
 import java.util.Arrays;
 
