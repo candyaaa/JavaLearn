@@ -1,9 +1,11 @@
-package org.example.spring.tx;
+package org.example.spring.transactional;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -55,18 +57,31 @@ import javax.sql.DataSource;
  *
  */
 @EnableTransactionManagement
-@ComponentScan("org.example.spring.tx")
+@ComponentScan("org.example.spring.transactional")
 @Configuration
-public class TxConfig {
+@PropertySource("classpath:dbConfig.properties")
+public class TransactionalConfig {
+
+    @Value("${db.username}")
+    private String username;
+
+    @Value("${db.password}")
+    private String password;
+
+    @Value("${db.driverClass}")
+    private String driverClass;
+
+    @Value("${db.jdbcUrl}")
+    private String jdbcUr;;
 
     //数据源
     @Bean
     public DataSource dataSource() throws Exception{
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        dataSource.setUser("root");
-        dataSource.setPassword("root");
-        dataSource.setDriverClass("com.mysql.jdbc.Driver");
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/db");
+        dataSource.setUser(username);
+        dataSource.setPassword(password);
+        dataSource.setDriverClass(driverClass);
+        dataSource.setJdbcUrl(jdbcUr);
         return dataSource;
     }
 
