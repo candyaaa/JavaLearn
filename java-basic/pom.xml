@@ -50,6 +50,7 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
+        <!--netty-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId> <!-- Use 'netty-all' for 4.0 or above -->
