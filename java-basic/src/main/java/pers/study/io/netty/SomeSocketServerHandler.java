@@ -18,7 +18,8 @@ public class SomeSocketServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         log.info("client address:{}", ctx.channel().remoteAddress());
-        ctx.channel().writeAndFlush(String.format(result, UUID.randomUUID()));
+        String format = String.format(result, UUID.randomUUID());
+        ctx.channel().writeAndFlush(format);
         ctx.fireChannelActive();
         TimeUnit.MICROSECONDS.sleep(500);
     }

@@ -1,0 +1,407 @@
+[2021-07-16 12:51:22.298][io.netty.util.internal.logging.InternalLoggerFactory:43]DEBUG -- Using SLF4J as the default logging framework
+[2021-07-16 12:51:22.306][io.netty.channel.MultithreadEventLoopGroup:44]DEBUG -- -Dio.netty.eventLoopThreads: 32
+[2021-07-16 12:51:22.346][io.netty.channel.nio.NioEventLoop:105]DEBUG -- -Dio.netty.noKeySetOptimization: false
+[2021-07-16 12:51:22.346][io.netty.channel.nio.NioEventLoop:106]DEBUG -- -Dio.netty.selectorAutoRebuildThreshold: 512
+[2021-07-16 12:51:22.372][io.netty.util.internal.PlatformDependent:955]DEBUG -- Platform: Windows
+[2021-07-16 12:51:22.374][io.netty.util.internal.PlatformDependent0:395]DEBUG -- -Dio.netty.noUnsafe: false
+[2021-07-16 12:51:22.375][io.netty.util.internal.PlatformDependent0:871]DEBUG -- Java version: 8
+[2021-07-16 12:51:22.377][io.netty.util.internal.PlatformDependent0:120]DEBUG -- sun.misc.Unsafe.theUnsafe: available
+[2021-07-16 12:51:22.378][io.netty.util.internal.PlatformDependent0:144]DEBUG -- sun.misc.Unsafe.copyMemory: available
+[2021-07-16 12:51:22.379][io.netty.util.internal.PlatformDependent0:182]DEBUG -- java.nio.Buffer.address: available
+[2021-07-16 12:51:22.380][io.netty.util.internal.PlatformDependent0:243]DEBUG -- direct buffer constructor: available
+[2021-07-16 12:51:22.381][io.netty.util.internal.PlatformDependent0:313]DEBUG -- java.nio.Bits.unaligned: available, true
+[2021-07-16 12:51:22.382][io.netty.util.internal.PlatformDependent0:378]DEBUG -- jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[2021-07-16 12:51:22.382][io.netty.util.internal.PlatformDependent0:385]DEBUG -- java.nio.DirectByteBuffer.<init>(long, int): available
+[2021-07-16 12:51:22.382][io.netty.util.internal.PlatformDependent:992]DEBUG -- sun.misc.Unsafe: available
+[2021-07-16 12:51:22.383][io.netty.util.internal.PlatformDependent:1086]DEBUG -- -Dio.netty.tmpdir: C:\Users\candyaaa\AppData\Local\Temp (java.io.tmpdir)
+[2021-07-16 12:51:22.384][io.netty.util.internal.PlatformDependent:1165]DEBUG -- -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[2021-07-16 12:51:22.386][io.netty.util.internal.PlatformDependent:157]DEBUG -- -Dio.netty.maxDirectMemory: 3679977472 bytes
+[2021-07-16 12:51:22.386][io.netty.util.internal.PlatformDependent:164]DEBUG -- -Dio.netty.uninitializedArrayAllocationThreshold: -1
+[2021-07-16 12:51:22.389][io.netty.util.internal.CleanerJava6:92]DEBUG -- java.nio.ByteBuffer.cleaner(): available
+[2021-07-16 12:51:22.390][io.netty.util.internal.PlatformDependent:184]DEBUG -- -Dio.netty.noPreferDirect: false
+[2021-07-16 12:51:22.404][io.netty.util.internal.PlatformDependent:860]DEBUG -- org.jctools-core.MpscChunkedArrayQueue: available
+[2021-07-16 12:51:22.749][io.netty.channel.DefaultChannelId:79]DEBUG -- -Dio.netty.processId: 134400 (auto-detected)
+[2021-07-16 12:51:22.751][io.netty.util.NetUtil:139]DEBUG -- -Djava.net.preferIPv4Stack: false
+[2021-07-16 12:51:22.752][io.netty.util.NetUtil:140]DEBUG -- -Djava.net.preferIPv6Addresses: false
+[2021-07-16 12:51:22.908][io.netty.util.NetUtil:224]DEBUG -- Loopback interface: [lo, Software Loopback Interface 1, 127.0.0.1] ([lo, Software Loopback Interface 1, 127.0.0.1], {})
+[2021-07-16 12:51:22.909][io.netty.util.NetUtil:289]DEBUG -- Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[2021-07-16 12:51:23.083][io.netty.channel.DefaultChannelId:101]DEBUG -- -Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[2021-07-16 12:51:23.092][io.netty.util.internal.InternalThreadLocalMap:54]DEBUG -- -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[2021-07-16 12:51:23.093][io.netty.util.internal.InternalThreadLocalMap:57]DEBUG -- -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[2021-07-16 12:51:23.106][io.netty.util.ResourceLeakDetector:129]DEBUG -- -Dio.netty.leakDetection.level: simple
+[2021-07-16 12:51:23.106][io.netty.util.ResourceLeakDetector:130]DEBUG -- -Dio.netty.leakDetection.targetRecords: 4
+[2021-07-16 12:51:23.143][io.netty.buffer.PooledByteBufAllocator:126]DEBUG -- -Dio.netty.allocator.numHeapArenas: 32
+[2021-07-16 12:51:23.143][io.netty.buffer.PooledByteBufAllocator:127]DEBUG -- -Dio.netty.allocator.numDirectArenas: 32
+[2021-07-16 12:51:23.143][io.netty.buffer.PooledByteBufAllocator:129]DEBUG -- -Dio.netty.allocator.pageSize: 8192
+[2021-07-16 12:51:23.143][io.netty.buffer.PooledByteBufAllocator:134]DEBUG -- -Dio.netty.allocator.maxOrder: 11
+[2021-07-16 12:51:23.144][io.netty.buffer.PooledByteBufAllocator:138]DEBUG -- -Dio.netty.allocator.chunkSize: 16777216
+[2021-07-16 12:51:23.144][io.netty.buffer.PooledByteBufAllocator:139]DEBUG -- -Dio.netty.allocator.tinyCacheSize: 512
+[2021-07-16 12:51:23.144][io.netty.buffer.PooledByteBufAllocator:140]DEBUG -- -Dio.netty.allocator.smallCacheSize: 256
+[2021-07-16 12:51:23.144][io.netty.buffer.PooledByteBufAllocator:141]DEBUG -- -Dio.netty.allocator.normalCacheSize: 64
+[2021-07-16 12:51:23.144][io.netty.buffer.PooledByteBufAllocator:142]DEBUG -- -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[2021-07-16 12:51:23.144][io.netty.buffer.PooledByteBufAllocator:143]DEBUG -- -Dio.netty.allocator.cacheTrimInterval: 8192
+[2021-07-16 12:51:23.144][io.netty.buffer.PooledByteBufAllocator:144]DEBUG -- -Dio.netty.allocator.useCacheForAllThreads: true
+[2021-07-16 12:51:23.145][io.netty.buffer.PooledByteBufAllocator:145]DEBUG -- -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[2021-07-16 12:51:23.156][io.netty.buffer.ByteBufUtil:83]DEBUG -- -Dio.netty.allocator.type: pooled
+[2021-07-16 12:51:23.157][io.netty.buffer.ByteBufUtil:92]DEBUG -- -Dio.netty.threadLocalDirectBufferSize: 0
+[2021-07-16 12:51:23.157][io.netty.buffer.ByteBufUtil:95]DEBUG -- -Dio.netty.maxThreadLocalCharBufferSize: 16384
+[2021-07-16 12:51:23.172][pers.study.io.netty.ChannelPipelineDemo:46]INFO  -- server start...
+[2021-07-16 12:51:26.193][io.netty.util.internal.logging.InternalLoggerFactory:43]DEBUG -- Using SLF4J as the default logging framework
+[2021-07-16 12:51:26.204][io.netty.channel.MultithreadEventLoopGroup:44]DEBUG -- -Dio.netty.eventLoopThreads: 32
+[2021-07-16 12:51:26.237][io.netty.channel.nio.NioEventLoop:105]DEBUG -- -Dio.netty.noKeySetOptimization: false
+[2021-07-16 12:51:26.237][io.netty.channel.nio.NioEventLoop:106]DEBUG -- -Dio.netty.selectorAutoRebuildThreshold: 512
+[2021-07-16 12:51:26.259][io.netty.util.internal.PlatformDependent:955]DEBUG -- Platform: Windows
+[2021-07-16 12:51:26.261][io.netty.util.internal.PlatformDependent0:395]DEBUG -- -Dio.netty.noUnsafe: false
+[2021-07-16 12:51:26.262][io.netty.util.internal.PlatformDependent0:871]DEBUG -- Java version: 8
+[2021-07-16 12:51:26.263][io.netty.util.internal.PlatformDependent0:120]DEBUG -- sun.misc.Unsafe.theUnsafe: available
+[2021-07-16 12:51:26.265][io.netty.util.internal.PlatformDependent0:144]DEBUG -- sun.misc.Unsafe.copyMemory: available
+[2021-07-16 12:51:26.266][io.netty.util.internal.PlatformDependent0:182]DEBUG -- java.nio.Buffer.address: available
+[2021-07-16 12:51:26.267][io.netty.util.internal.PlatformDependent0:243]DEBUG -- direct buffer constructor: available
+[2021-07-16 12:51:26.268][io.netty.util.internal.PlatformDependent0:313]DEBUG -- java.nio.Bits.unaligned: available, true
+[2021-07-16 12:51:26.268][io.netty.util.internal.PlatformDependent0:378]DEBUG -- jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[2021-07-16 12:51:26.269][io.netty.util.internal.PlatformDependent0:385]DEBUG -- java.nio.DirectByteBuffer.<init>(long, int): available
+[2021-07-16 12:51:26.269][io.netty.util.internal.PlatformDependent:992]DEBUG -- sun.misc.Unsafe: available
+[2021-07-16 12:51:26.270][io.netty.util.internal.PlatformDependent:1086]DEBUG -- -Dio.netty.tmpdir: C:\Users\candyaaa\AppData\Local\Temp (java.io.tmpdir)
+[2021-07-16 12:51:26.270][io.netty.util.internal.PlatformDependent:1165]DEBUG -- -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[2021-07-16 12:51:26.273][io.netty.util.internal.PlatformDependent:157]DEBUG -- -Dio.netty.maxDirectMemory: 3679977472 bytes
+[2021-07-16 12:51:26.273][io.netty.util.internal.PlatformDependent:164]DEBUG -- -Dio.netty.uninitializedArrayAllocationThreshold: -1
+[2021-07-16 12:51:26.277][io.netty.util.internal.CleanerJava6:92]DEBUG -- java.nio.ByteBuffer.cleaner(): available
+[2021-07-16 12:51:26.278][io.netty.util.internal.PlatformDependent:184]DEBUG -- -Dio.netty.noPreferDirect: false
+[2021-07-16 12:51:26.296][io.netty.util.internal.PlatformDependent:860]DEBUG -- org.jctools-core.MpscChunkedArrayQueue: available
+[2021-07-16 12:51:26.630][io.netty.channel.DefaultChannelId:79]DEBUG -- -Dio.netty.processId: 137540 (auto-detected)
+[2021-07-16 12:51:26.632][io.netty.util.NetUtil:139]DEBUG -- -Djava.net.preferIPv4Stack: false
+[2021-07-16 12:51:26.633][io.netty.util.NetUtil:140]DEBUG -- -Djava.net.preferIPv6Addresses: false
+[2021-07-16 12:51:26.781][io.netty.util.NetUtil:224]DEBUG -- Loopback interface: [lo, Software Loopback Interface 1, 127.0.0.1] ([lo, Software Loopback Interface 1, 127.0.0.1], {})
+[2021-07-16 12:51:26.782][io.netty.util.NetUtil:289]DEBUG -- Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[2021-07-16 12:51:26.941][io.netty.channel.DefaultChannelId:101]DEBUG -- -Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[2021-07-16 12:51:26.949][io.netty.util.internal.InternalThreadLocalMap:54]DEBUG -- -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[2021-07-16 12:51:26.949][io.netty.util.internal.InternalThreadLocalMap:57]DEBUG -- -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[2021-07-16 12:51:26.962][io.netty.util.ResourceLeakDetector:129]DEBUG -- -Dio.netty.leakDetection.level: simple
+[2021-07-16 12:51:26.963][io.netty.util.ResourceLeakDetector:130]DEBUG -- -Dio.netty.leakDetection.targetRecords: 4
+[2021-07-16 12:51:26.987][io.netty.buffer.PooledByteBufAllocator:126]DEBUG -- -Dio.netty.allocator.numHeapArenas: 32
+[2021-07-16 12:51:26.987][io.netty.buffer.PooledByteBufAllocator:127]DEBUG -- -Dio.netty.allocator.numDirectArenas: 32
+[2021-07-16 12:51:26.987][io.netty.buffer.PooledByteBufAllocator:129]DEBUG -- -Dio.netty.allocator.pageSize: 8192
+[2021-07-16 12:51:26.987][io.netty.buffer.PooledByteBufAllocator:134]DEBUG -- -Dio.netty.allocator.maxOrder: 11
+[2021-07-16 12:51:26.987][io.netty.buffer.PooledByteBufAllocator:138]DEBUG -- -Dio.netty.allocator.chunkSize: 16777216
+[2021-07-16 12:51:26.987][io.netty.buffer.PooledByteBufAllocator:139]DEBUG -- -Dio.netty.allocator.tinyCacheSize: 512
+[2021-07-16 12:51:26.987][io.netty.buffer.PooledByteBufAllocator:140]DEBUG -- -Dio.netty.allocator.smallCacheSize: 256
+[2021-07-16 12:51:26.988][io.netty.buffer.PooledByteBufAllocator:141]DEBUG -- -Dio.netty.allocator.normalCacheSize: 64
+[2021-07-16 12:51:26.988][io.netty.buffer.PooledByteBufAllocator:142]DEBUG -- -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[2021-07-16 12:51:26.988][io.netty.buffer.PooledByteBufAllocator:143]DEBUG -- -Dio.netty.allocator.cacheTrimInterval: 8192
+[2021-07-16 12:51:26.988][io.netty.buffer.PooledByteBufAllocator:144]DEBUG -- -Dio.netty.allocator.useCacheForAllThreads: true
+[2021-07-16 12:51:26.988][io.netty.buffer.PooledByteBufAllocator:145]DEBUG -- -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[2021-07-16 12:51:26.999][io.netty.buffer.ByteBufUtil:83]DEBUG -- -Dio.netty.allocator.type: pooled
+[2021-07-16 12:51:26.999][io.netty.buffer.ByteBufUtil:92]DEBUG -- -Dio.netty.threadLocalDirectBufferSize: 0
+[2021-07-16 12:51:26.999][io.netty.buffer.ByteBufUtil:95]DEBUG -- -Dio.netty.maxThreadLocalCharBufferSize: 16384
+[2021-07-16 12:51:27.033][io.netty.util.Recycler:96]DEBUG -- -Dio.netty.recycler.maxCapacityPerThread: 4096
+[2021-07-16 12:51:27.034][io.netty.util.Recycler:97]DEBUG -- -Dio.netty.recycler.maxSharedCapacityFactor: 2
+[2021-07-16 12:51:27.034][io.netty.util.Recycler:98]DEBUG -- -Dio.netty.recycler.linkCapacity: 16
+[2021-07-16 12:51:27.034][io.netty.util.Recycler:99]DEBUG -- -Dio.netty.recycler.ratio: 8
+[2021-07-16 12:51:27.044][io.netty.buffer.AbstractByteBuf:61]DEBUG -- -Dio.netty.buffer.checkAccessible: true
+[2021-07-16 12:51:27.044][io.netty.buffer.AbstractByteBuf:62]DEBUG -- -Dio.netty.buffer.checkBounds: true
+[2021-07-16 12:51:27.047][io.netty.util.ResourceLeakDetectorFactory:202]DEBUG -- Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@287b430f
+[2021-07-16 12:51:27.084][io.netty.util.Recycler:96]DEBUG -- -Dio.netty.recycler.maxCapacityPerThread: 4096
+[2021-07-16 12:51:27.085][io.netty.util.Recycler:97]DEBUG -- -Dio.netty.recycler.maxSharedCapacityFactor: 2
+[2021-07-16 12:51:27.085][io.netty.util.Recycler:98]DEBUG -- -Dio.netty.recycler.linkCapacity: 16
+[2021-07-16 12:51:27.085][io.netty.util.Recycler:99]DEBUG -- -Dio.netty.recycler.ratio: 8
+[2021-07-16 12:51:27.094][io.netty.buffer.AbstractByteBuf:61]DEBUG -- -Dio.netty.buffer.checkAccessible: true
+[2021-07-16 12:51:27.095][io.netty.buffer.AbstractByteBuf:62]DEBUG -- -Dio.netty.buffer.checkBounds: true
+[2021-07-16 12:51:27.097][io.netty.util.ResourceLeakDetectorFactory:202]DEBUG -- Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@7b41eee7
+[2021-07-16 12:51:27.104][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:51:39.796][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:51:44.807][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:51:49.814][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:51:54.820][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:51:59.824][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:04.829][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:09.829][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:14.829][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:19.843][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:24.857][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:29.868][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:34.874][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:39.885][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:44.892][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:49.893][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:54.899][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:52:59.913][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:04.919][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:09.933][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:14.936][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:19.942][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:24.957][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:29.972][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:34.984][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:39.994][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:44.996][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:50.008][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:53:55.018][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:00.032][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:05.047][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:10.058][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:15.070][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:20.084][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:25.086][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:30.101][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:35.112][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:40.133][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:45.138][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:50.143][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:54:55.148][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:00.157][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:05.159][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:10.170][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:15.183][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:20.192][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:25.193][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:30.205][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:35.219][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:40.223][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:45.229][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:50.236][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:55:55.243][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:00.257][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:05.259][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:10.260][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:15.274][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:20.287][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:25.300][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:30.309][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:35.315][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:40.323][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:45.338][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:50.340][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:56:55.343][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:00.348][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:05.362][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:10.364][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:15.374][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:20.383][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:25.387][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:30.395][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:35.411][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:40.420][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:45.420][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:50.430][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:57:55.434][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:00.450][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:05.452][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:10.458][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:15.463][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:20.463][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:25.469][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:30.482][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:35.496][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:40.507][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:45.512][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:50.516][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:58:55.525][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:00.536][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:05.551][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:10.561][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:15.574][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:20.583][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:25.583][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:30.590][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:35.596][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:40.604][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:45.620][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:50.633][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 12:59:55.644][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:00.655][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:05.657][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:10.666][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:15.670][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:20.674][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:25.679][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:30.689][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:35.689][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:40.705][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:45.705][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:50.718][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:00:55.721][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:00.729][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:05.733][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:10.746][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:15.759][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:20.775][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:25.779][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:30.786][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:35.789][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:40.799][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:45.811][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:50.815][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:01:55.823][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:00.836][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:05.837][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:10.850][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:15.856][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:20.863][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:25.870][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:30.873][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:35.885][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:40.888][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:45.902][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:50.908][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:02:55.918][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:00.930][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:05.938][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:10.948][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:15.956][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:20.969][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:25.980][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:30.989][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:36.004][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:41.019][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:46.032][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:51.034][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:03:56.043][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:01.053][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:06.065][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:11.076][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:16.082][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:21.093][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:26.098][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:31.113][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:36.124][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:41.138][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:46.142][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:51.144][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:04:56.152][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:01.164][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:06.173][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:11.181][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:16.188][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:21.203][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:26.207][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:31.221][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:36.234][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:41.240][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:46.254][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:51.266][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:05:56.269][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:01.281][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:06.285][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:11.286][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:16.290][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:21.298][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:26.311][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:31.317][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:36.329][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:41.338][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:46.344][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:51.397][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:06:56.414][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:01.430][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:06.433][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:11.433][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:16.440][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:21.453][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:26.469][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:31.472][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:36.478][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:41.486][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:46.509][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:51.518][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:07:56.531][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:08:01.541][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:08:06.555][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:08:11.567][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:08:16.588][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:08:21.590][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:08:26.603][pers.study.io.netty.SomeSocketServerHandler:20]INFO  -- client address:/127.0.0.1:59357
+[2021-07-16 13:08:42.339][io.netty.util.internal.logging.InternalLoggerFactory:43]DEBUG -- Using SLF4J as the default logging framework
+[2021-07-16 13:08:42.353][io.netty.channel.MultithreadEventLoopGroup:44]DEBUG -- -Dio.netty.eventLoopThreads: 32
+[2021-07-16 13:08:42.410][io.netty.channel.nio.NioEventLoop:105]DEBUG -- -Dio.netty.noKeySetOptimization: false
+[2021-07-16 13:08:42.411][io.netty.channel.nio.NioEventLoop:106]DEBUG -- -Dio.netty.selectorAutoRebuildThreshold: 512
+[2021-07-16 13:08:42.449][io.netty.util.internal.PlatformDependent:955]DEBUG -- Platform: Windows
+[2021-07-16 13:08:42.453][io.netty.util.internal.PlatformDependent0:395]DEBUG -- -Dio.netty.noUnsafe: false
+[2021-07-16 13:08:42.454][io.netty.util.internal.PlatformDependent0:871]DEBUG -- Java version: 8
+[2021-07-16 13:08:42.458][io.netty.util.internal.PlatformDependent0:120]DEBUG -- sun.misc.Unsafe.theUnsafe: available
+[2021-07-16 13:08:42.460][io.netty.util.internal.PlatformDependent0:144]DEBUG -- sun.misc.Unsafe.copyMemory: available
+[2021-07-16 13:08:42.462][io.netty.util.internal.PlatformDependent0:182]DEBUG -- java.nio.Buffer.address: available
+[2021-07-16 13:08:42.464][io.netty.util.internal.PlatformDependent0:243]DEBUG -- direct buffer constructor: available
+[2021-07-16 13:08:42.467][io.netty.util.internal.PlatformDependent0:313]DEBUG -- java.nio.Bits.unaligned: available, true
+[2021-07-16 13:08:42.468][io.netty.util.internal.PlatformDependent0:378]DEBUG -- jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[2021-07-16 13:08:42.468][io.netty.util.internal.PlatformDependent0:385]DEBUG -- java.nio.DirectByteBuffer.<init>(long, int): available
+[2021-07-16 13:08:42.469][io.netty.util.internal.PlatformDependent:992]DEBUG -- sun.misc.Unsafe: available
+[2021-07-16 13:08:42.470][io.netty.util.internal.PlatformDependent:1086]DEBUG -- -Dio.netty.tmpdir: C:\Users\candyaaa\AppData\Local\Temp (java.io.tmpdir)
+[2021-07-16 13:08:42.471][io.netty.util.internal.PlatformDependent:1165]DEBUG -- -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[2021-07-16 13:08:42.475][io.netty.util.internal.PlatformDependent:157]DEBUG -- -Dio.netty.maxDirectMemory: 3679977472 bytes
+[2021-07-16 13:08:42.476][io.netty.util.internal.PlatformDependent:164]DEBUG -- -Dio.netty.uninitializedArrayAllocationThreshold: -1
+[2021-07-16 13:08:42.481][io.netty.util.internal.CleanerJava6:92]DEBUG -- java.nio.ByteBuffer.cleaner(): available
+[2021-07-16 13:08:42.482][io.netty.util.internal.PlatformDependent:184]DEBUG -- -Dio.netty.noPreferDirect: false
+[2021-07-16 13:08:42.498][io.netty.util.internal.PlatformDependent:860]DEBUG -- org.jctools-core.MpscChunkedArrayQueue: available
+[2021-07-16 13:08:42.846][io.netty.channel.DefaultChannelId:79]DEBUG -- -Dio.netty.processId: 135316 (auto-detected)
+[2021-07-16 13:08:42.849][io.netty.util.NetUtil:139]DEBUG -- -Djava.net.preferIPv4Stack: false
+[2021-07-16 13:08:42.849][io.netty.util.NetUtil:140]DEBUG -- -Djava.net.preferIPv6Addresses: false
+[2021-07-16 13:08:42.992][io.netty.util.NetUtil:224]DEBUG -- Loopback interface: [lo, Software Loopback Interface 1, 127.0.0.1] ([lo, Software Loopback Interface 1, 127.0.0.1], {})
+[2021-07-16 13:08:42.993][io.netty.util.NetUtil:289]DEBUG -- Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[2021-07-16 13:08:43.161][io.netty.channel.DefaultChannelId:101]DEBUG -- -Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[2021-07-16 13:08:43.168][io.netty.util.internal.InternalThreadLocalMap:54]DEBUG -- -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[2021-07-16 13:08:43.168][io.netty.util.internal.InternalThreadLocalMap:57]DEBUG -- -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[2021-07-16 13:08:43.193][io.netty.util.ResourceLeakDetector:129]DEBUG -- -Dio.netty.leakDetection.level: simple
+[2021-07-16 13:08:43.194][io.netty.util.ResourceLeakDetector:130]DEBUG -- -Dio.netty.leakDetection.targetRecords: 4
+[2021-07-16 13:08:43.234][io.netty.buffer.PooledByteBufAllocator:126]DEBUG -- -Dio.netty.allocator.numHeapArenas: 32
+[2021-07-16 13:08:43.235][io.netty.buffer.PooledByteBufAllocator:127]DEBUG -- -Dio.netty.allocator.numDirectArenas: 32
+[2021-07-16 13:08:43.235][io.netty.buffer.PooledByteBufAllocator:129]DEBUG -- -Dio.netty.allocator.pageSize: 8192
+[2021-07-16 13:08:43.235][io.netty.buffer.PooledByteBufAllocator:134]DEBUG -- -Dio.netty.allocator.maxOrder: 11
+[2021-07-16 13:08:43.235][io.netty.buffer.PooledByteBufAllocator:138]DEBUG -- -Dio.netty.allocator.chunkSize: 16777216
+[2021-07-16 13:08:43.236][io.netty.buffer.PooledByteBufAllocator:139]DEBUG -- -Dio.netty.allocator.tinyCacheSize: 512
+[2021-07-16 13:08:43.236][io.netty.buffer.PooledByteBufAllocator:140]DEBUG -- -Dio.netty.allocator.smallCacheSize: 256
+[2021-07-16 13:08:43.236][io.netty.buffer.PooledByteBufAllocator:141]DEBUG -- -Dio.netty.allocator.normalCacheSize: 64
+[2021-07-16 13:08:43.236][io.netty.buffer.PooledByteBufAllocator:142]DEBUG -- -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[2021-07-16 13:08:43.236][io.netty.buffer.PooledByteBufAllocator:143]DEBUG -- -Dio.netty.allocator.cacheTrimInterval: 8192
+[2021-07-16 13:08:43.236][io.netty.buffer.PooledByteBufAllocator:144]DEBUG -- -Dio.netty.allocator.useCacheForAllThreads: true
+[2021-07-16 13:08:43.237][io.netty.buffer.PooledByteBufAllocator:145]DEBUG -- -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[2021-07-16 13:08:43.250][io.netty.buffer.ByteBufUtil:83]DEBUG -- -Dio.netty.allocator.type: pooled
+[2021-07-16 13:08:43.251][io.netty.buffer.ByteBufUtil:92]DEBUG -- -Dio.netty.threadLocalDirectBufferSize: 0
+[2021-07-16 13:08:43.251][io.netty.buffer.ByteBufUtil:95]DEBUG -- -Dio.netty.maxThreadLocalCharBufferSize: 16384
+[2021-07-16 13:08:43.270][pers.study.io.netty.ChannelPipelineDemo:46]INFO  -- server start...
+[2021-07-16 13:08:44.972][io.netty.util.internal.logging.InternalLoggerFactory:43]DEBUG -- Using SLF4J as the default logging framework
+[2021-07-16 13:08:44.996][io.netty.channel.MultithreadEventLoopGroup:44]DEBUG -- -Dio.netty.eventLoopThreads: 32
+[2021-07-16 13:08:45.147][io.netty.channel.nio.NioEventLoop:105]DEBUG -- -Dio.netty.noKeySetOptimization: false
+[2021-07-16 13:08:45.147][io.netty.channel.nio.NioEventLoop:106]DEBUG -- -Dio.netty.selectorAutoRebuildThreshold: 512
+[2021-07-16 13:08:45.178][io.netty.util.internal.PlatformDependent:955]DEBUG -- Platform: Windows
+[2021-07-16 13:08:45.181][io.netty.util.internal.PlatformDependent0:395]DEBUG -- -Dio.netty.noUnsafe: false
+[2021-07-16 13:08:45.181][io.netty.util.internal.PlatformDependent0:871]DEBUG -- Java version: 8
+[2021-07-16 13:08:45.184][io.netty.util.internal.PlatformDependent0:120]DEBUG -- sun.misc.Unsafe.theUnsafe: available
+[2021-07-16 13:08:45.185][io.netty.util.internal.PlatformDependent0:144]DEBUG -- sun.misc.Unsafe.copyMemory: available
+[2021-07-16 13:08:45.187][io.netty.util.internal.PlatformDependent0:182]DEBUG -- java.nio.Buffer.address: available
+[2021-07-16 13:08:45.188][io.netty.util.internal.PlatformDependent0:243]DEBUG -- direct buffer constructor: available
+[2021-07-16 13:08:45.190][io.netty.util.internal.PlatformDependent0:313]DEBUG -- java.nio.Bits.unaligned: available, true
+[2021-07-16 13:08:45.191][io.netty.util.internal.PlatformDependent0:378]DEBUG -- jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[2021-07-16 13:08:45.191][io.netty.util.internal.PlatformDependent0:385]DEBUG -- java.nio.DirectByteBuffer.<init>(long, int): available
+[2021-07-16 13:08:45.191][io.netty.util.internal.PlatformDependent:992]DEBUG -- sun.misc.Unsafe: available
+[2021-07-16 13:08:45.192][io.netty.util.internal.PlatformDependent:1086]DEBUG -- -Dio.netty.tmpdir: C:\Users\candyaaa\AppData\Local\Temp (java.io.tmpdir)
+[2021-07-16 13:08:45.192][io.netty.util.internal.PlatformDependent:1165]DEBUG -- -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[2021-07-16 13:08:45.194][io.netty.util.internal.PlatformDependent:157]DEBUG -- -Dio.netty.maxDirectMemory: 3679977472 bytes
+[2021-07-16 13:08:45.195][io.netty.util.internal.PlatformDependent:164]DEBUG -- -Dio.netty.uninitializedArrayAllocationThreshold: -1
+[2021-07-16 13:08:45.197][io.netty.util.internal.CleanerJava6:92]DEBUG -- java.nio.ByteBuffer.cleaner(): available
+[2021-07-16 13:08:45.197][io.netty.util.internal.PlatformDependent:184]DEBUG -- -Dio.netty.noPreferDirect: false
+[2021-07-16 13:08:45.228][io.netty.util.internal.PlatformDependent:860]DEBUG -- org.jctools-core.MpscChunkedArrayQueue: available
+[2021-07-16 13:08:46.365][io.netty.channel.DefaultChannelId:79]DEBUG -- -Dio.netty.processId: 136436 (auto-detected)
+[2021-07-16 13:08:46.368][io.netty.util.NetUtil:139]DEBUG -- -Djava.net.preferIPv4Stack: false
+[2021-07-16 13:08:46.369][io.netty.util.NetUtil:140]DEBUG -- -Djava.net.preferIPv6Addresses: false
+[2021-07-16 13:08:46.816][io.netty.util.NetUtil:224]DEBUG -- Loopback interface: [lo, Software Loopback Interface 1, 127.0.0.1] ([lo, Software Loopback Interface 1, 127.0.0.1], {})
+[2021-07-16 13:08:46.818][io.netty.util.NetUtil:289]DEBUG -- Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[2021-07-16 13:08:47.018][io.netty.channel.DefaultChannelId:101]DEBUG -- -Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[2021-07-16 13:08:47.026][io.netty.util.internal.InternalThreadLocalMap:54]DEBUG -- -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[2021-07-16 13:08:47.027][io.netty.util.internal.InternalThreadLocalMap:57]DEBUG -- -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[2021-07-16 13:08:47.060][io.netty.util.ResourceLeakDetector:129]DEBUG -- -Dio.netty.leakDetection.level: simple
+[2021-07-16 13:08:47.061][io.netty.util.ResourceLeakDetector:130]DEBUG -- -Dio.netty.leakDetection.targetRecords: 4
+[2021-07-16 13:08:47.090][io.netty.buffer.PooledByteBufAllocator:126]DEBUG -- -Dio.netty.allocator.numHeapArenas: 32
+[2021-07-16 13:08:47.090][io.netty.buffer.PooledByteBufAllocator:127]DEBUG -- -Dio.netty.allocator.numDirectArenas: 32
+[2021-07-16 13:08:47.090][io.netty.buffer.PooledByteBufAllocator:129]DEBUG -- -Dio.netty.allocator.pageSize: 8192
+[2021-07-16 13:08:47.091][io.netty.buffer.PooledByteBufAllocator:134]DEBUG -- -Dio.netty.allocator.maxOrder: 11
+[2021-07-16 13:08:47.091][io.netty.buffer.PooledByteBufAllocator:138]DEBUG -- -Dio.netty.allocator.chunkSize: 16777216
+[2021-07-16 13:08:47.091][io.netty.buffer.PooledByteBufAllocator:139]DEBUG -- -Dio.netty.allocator.tinyCacheSize: 512
+[2021-07-16 13:08:47.091][io.netty.buffer.PooledByteBufAllocator:140]DEBUG -- -Dio.netty.allocator.smallCacheSize: 256
+[2021-07-16 13:08:47.091][io.netty.buffer.PooledByteBufAllocator:141]DEBUG -- -Dio.netty.allocator.normalCacheSize: 64
+[2021-07-16 13:08:47.091][io.netty.buffer.PooledByteBufAllocator:142]DEBUG -- -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[2021-07-16 13:08:47.091][io.netty.buffer.PooledByteBufAllocator:143]DEBUG -- -Dio.netty.allocator.cacheTrimInterval: 8192
+[2021-07-16 13:08:47.091][io.netty.buffer.PooledByteBufAllocator:144]DEBUG -- -Dio.netty.allocator.useCacheForAllThreads: true
+[2021-07-16 13:08:47.091][io.netty.buffer.PooledByteBufAllocator:145]DEBUG -- -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[2021-07-16 13:08:47.106][io.netty.buffer.ByteBufUtil:83]DEBUG -- -Dio.netty.allocator.type: pooled
+[2021-07-16 13:08:47.106][io.netty.buffer.ByteBufUtil:92]DEBUG -- -Dio.netty.threadLocalDirectBufferSize: 0
+[2021-07-16 13:08:47.107][io.netty.buffer.ByteBufUtil:95]DEBUG -- -Dio.netty.maxThreadLocalCharBufferSize: 16384
