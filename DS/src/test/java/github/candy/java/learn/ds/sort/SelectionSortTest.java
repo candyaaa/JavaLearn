@@ -1,14 +1,17 @@
-package org.example.sort;
+package github.candy.java.learn.ds.sort;
 
 import org.junit.Test;
 
 import java.util.Arrays;
 
-public class BubblingSortTest {
+/**
+ * 选择排序测试
+ */
+public class SelectionSortTest {
     @Test
-    public void sort(){
+    public void sort() {
         int[] arr = new int[]{11, -79, 999, 85652, 9999};
-        BubblingSort.sort(arr);
+        SelectionSort.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }

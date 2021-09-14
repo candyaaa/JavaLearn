@@ -1,4 +1,4 @@
-package org.example.tree;
+package github.candy.java.learn.ds.tree;
 
 import org.junit.Test;
 

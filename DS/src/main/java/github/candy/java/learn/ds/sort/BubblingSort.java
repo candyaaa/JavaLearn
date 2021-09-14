@@ -1,7 +1,5 @@
-package org.example.sort;
+package github.candy.java.learn.ds.sort;
 
-
-import java.util.Arrays;
 
 public class BubblingSort {//  11、8、1、79
     public static void sort(int[] arr) {

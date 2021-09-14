@@ -1,6 +1,4 @@
-package org.example.sort;
-
-import java.util.Arrays;
+package github.candy.java.learn.ds.sort;
 
 /**
  * 插入排序

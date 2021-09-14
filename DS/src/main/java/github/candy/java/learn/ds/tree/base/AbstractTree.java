@@ -1,4 +1,4 @@
-package org.example.tree.base;
+package github.candy.java.learn.ds.tree.base;
 
 /**
  * 抽象的tree

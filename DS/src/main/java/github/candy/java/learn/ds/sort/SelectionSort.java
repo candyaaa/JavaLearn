@@ -1,4 +1,4 @@
-package org.example.sort;
+package github.candy.java.learn.ds.sort;
 
 /**
  * 选择排序
