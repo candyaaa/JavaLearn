@@ -1,4 +1,4 @@
-package github.candy.java.learn.basic.io.netty;
+package github.candy.java.learn.netty4;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
