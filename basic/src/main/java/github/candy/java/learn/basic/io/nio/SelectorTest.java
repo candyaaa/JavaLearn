@@ -17,9 +17,7 @@ public class SelectorTest {
     @Test
     public void registerTest() throws IOException {
         ServerSocketChannel socketChannel = ServerSocketChannel.open();
-
         Selector selector = Selector.open();
         SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ);
-//        log.info();
     }
 }
