@@ -1,12 +1,12 @@
-package pers.study.design.proxy.cglib;
+package github.candy.java.learn.gof.cglib;
 
 
+import github.candy.java.learn.gof.common.AuthCheck;
+import github.candy.java.learn.gof.common.Report;
+import github.candy.java.learn.gof.common.UserDaoImpl;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
-import pers.study.design.proxy.common.AuthCheck;
-import pers.study.design.proxy.common.Report;
-import pers.study.design.proxy.common.UserDaoImpl;
 
 import java.lang.reflect.Method;
 

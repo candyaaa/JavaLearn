@@ -1,4 +1,4 @@
-package pers.study.design.proxy.common;
+package github.candy.java.learn.gof.common;
 
 import lombok.extern.slf4j.Slf4j;
 

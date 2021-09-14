@@ -1,4 +1,4 @@
-package pers.study.design.proxy.clone;
+package github.candy.java.learn.gof.clone;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

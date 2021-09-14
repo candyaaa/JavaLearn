@@ -1,10 +1,10 @@
-package pers.study.design.proxy.jdk;
+package github.candy.java.learn.gof.jdk;
 
 
-import pers.study.design.proxy.common.AuthCheck;
-import pers.study.design.proxy.common.Report;
-import pers.study.design.proxy.common.UserDao;
-import pers.study.design.proxy.common.UserDaoImpl;
+import github.candy.java.learn.gof.common.AuthCheck;
+import github.candy.java.learn.gof.common.Report;
+import github.candy.java.learn.gof.common.UserDao;
+import github.candy.java.learn.gof.common.UserDaoImpl;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

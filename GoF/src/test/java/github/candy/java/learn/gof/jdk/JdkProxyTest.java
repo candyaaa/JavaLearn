@@ -1,11 +1,9 @@
-package pers.study.design.proxy.jdk;
+package github.candy.java.learn.gof.jdk;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import org.junit.Test;
-import pers.study.design.proxy.common.UserDao;
-import pers.study.design.proxy.common.UserDaoImpl;
 
 public class JdkProxyTest {
 //    @Test

@@ -1,4 +1,4 @@
-package pers.study.design.proxy.clone;
+package github.candy.java.learn.gof.clone;
 
 import com.alibaba.fastjson.JSON;
 import java.util.Collections;
