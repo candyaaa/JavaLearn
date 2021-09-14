@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>basic</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <description>Java基础知识</description>
 
     <parent>
         <artifactId>java-learn-parent</artifactId>
