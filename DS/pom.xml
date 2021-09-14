@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>DS</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <description>数据结构</description>
+    <description>数据结构知识</description>
 
     <parent>
         <groupId>github.candy.java.learn</groupId>
@@ -13,22 +13,15 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.16</version>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
