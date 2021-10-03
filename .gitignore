@@ -1,26 +1,13 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-
-### IntelliJ IDEA ###
+# Created by .ignore support plugin (hsz.mobi)
+### Your template template
+# IntelliJ project files
 .idea
-*.iws
 *.iml
-*.ipr
-
-### NetBeans ###
-nbproject/private/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
-
-### Log ###
-*.log
+out
+gen
+target
+*.class
+*.project
+*.settings
+*.classpath
+*.DS_store
