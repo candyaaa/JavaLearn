@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <test-jerry></test-jerry>
+        <test-tom></test-tom>
+        <button @click="destroy">销毁</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        // 提供事件中心
+        const hub = new Vue();
+
+        // test jerry
+        Vue.component('test-jerry',{
+            data: function(){
+                return {
+                    num: 0 
+                }
+            },
+            template: `
+                <div>
+                    <div>JERRY:{{num}}</div>
+                    <div>
+                        <button @click="handle">点击</button>
+                    </div>
+                </div>
+            `,
+            methods: {
+                handle: function(){
+                    //触发兄弟组件的事件
+                    hub.$emit('tom-event',1);
+                }
+            },
+            // 这个钩子函数，一旦被触发，那么模板就已经就绪了
+            mounted: function(){
+                hub.$on('jerry-event',(val)=>{
+                    this.num += val;
+                });
+            }
+        });
+
+        // test tom
+        Vue.component('test-tom',{
+            data: function(){
+                return {
+                    num:0
+                }
+            },
+            template: `
+                <div>
+                    <div>TOM:{{num}}</div>
+                    <div>
+                        <button @click="handle">点击</button>
+                    </div>
+                </div>
+            `,
+            methods: {
+                handle: function(){
+                    hub.$emit('jerry-event',5);
+                }
+            },
+            // 这个钩子函数，一旦被触发，那么模板就已经就绪了
+            mounted: function(){
+                hub.$on('tom-event',(val)=>{
+                    this.num += val;
+                });
+            }
+        });
+
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                destroy: function(){
+                    hub.$off('jerry-event');
+                    hub.$off('tom-event');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

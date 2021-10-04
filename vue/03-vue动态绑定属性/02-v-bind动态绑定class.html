@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.active{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h2 v-bind:class="{active : isActive, line : isLine}">{{massage}}</h2>
+			<!-- 如果class的属性过长，那么我们可以通过函数直接返回 -->
+			<h2 v-bind:class="getClasses()">{{massage}}</h2>
+			<button v-on:click="btnClick">按钮</button>
+		</div>
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el:'#app',
+				data:{
+					massage: '你好啊',
+					isActive: true,
+					isLine: true
+				},
+				methods:{
+					btnClick:function(){
+						this.isActive = !this.isActive;
+					},
+					getClasses:function(){
+						return {active : this.isActive, line : this.isLine};
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 错误的做法：这里不可以使用mustache语法（<img src="{{imgUrl}}" />） -->
+			<!-- 正确的做法，要使用v-bind才能绑定标签里面的语法 -->
+			<img v-bind:src="imgUrl" />
+			
+			<!-- 语法糖的写法,本质就是v-bind -->
+			<img :src="imgUrl" />
+			
+			
+			<!-- v-bind的作用就是可以动态绑定标签属性 -->
+		</div>
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el:'#app',
+				data:{
+					massage: '你好啊',
+					imgUrl: '../img/QQ图片20200521132123.jpg'
+				}
+			});
+		</script>	
+	</body>
+</html>

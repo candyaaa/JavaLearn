@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <hello-jerry></hello-jerry>
+        <hello-world></hello-world>
+        <menu-item title="哈哈哈"></menu-item>
+        <!-- vue全局里面的值 -->
+        <menu-item :title="ptitle" content="hello"></menu-item>
+        <h1>注意驼峰</h1>
+        <menu-item-test menu="gege"></menu-item-test>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        // 命名如果是驼峰，那么标签中要用-分开
+        Vue.component('button-counter',{
+            // data必须是一个函数
+            data: function () {
+                return{
+                    count: 0
+                }
+            },
+            // 模板必须是单个根元素
+            template: '<button @click=handle>点击了{{count}}次</button>',
+            methods:{
+                handle: function () {
+                    this.count += 2;
+                }
+            }
+        })
+        // 属性传递
+        Vue.component('menu-item',{
+            props: ['title','content'],
+            data: function(){
+                return {
+                    msg: '子组件本身的数据'
+                }
+            },
+            template: '<div>{{msg + "----" + title + " " + content}}</div>'
+        });
+
+
+
+        // 局部组件
+        const HelloJerry = {
+            data: function(){
+                return{
+                    msg: 'HelloJerry'
+                }
+            },
+            template: '<div>{{msg}}</div>'
+        }
+
+
+        const HelloWorld = {
+            data: function(){
+                return{
+                    msg: 'HelloWorld'
+                }
+            },
+            template: '<div>{{msg}}</div>'
+        }
+
+        // 注意驼峰方式
+        Vue.component('menu-item-test',{
+            props: ['menu'],
+            template: '<div><div>{{menu}}</div><third-com testTitle="hello"></third-com></div>'
+        });
+
+        Vue.component('third-com',{
+            props: ['testTitle'],
+            template: '<div>{{testTitle}}</div>'
+        });
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                pmsg: '父组件的值',
+                ptitle: '动态绑定的属性'
+            },
+            components: {
+                'hello-jerry': HelloJerry,
+                'hello-world': HelloWorld
+            }
+        });
+        
+    </script>
+</body>
+</html>
