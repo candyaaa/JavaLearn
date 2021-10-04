@@ -9,8 +9,8 @@
     <description>Spring Framework</description>
 
     <parent>
-        <groupId>github.candy</groupId>
-        <artifactId>seek-knowledge</artifactId>
+        <groupId>github.candy.seek-knowledge</groupId>
+        <artifactId>java</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
