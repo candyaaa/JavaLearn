@@ -13,7 +13,7 @@ Invoker承载了网络连接、服务调用、重试等功能，在客户端，�
 
 Dubbo支持多注册中心同时消费，如果是多注册中心，则会在ReferenceConfig#createProxy中合并成一个Invoker
 
-### ReferenceBean#createProxy
+### ReferenceConfig#createProxy
 ```java
 
 ```

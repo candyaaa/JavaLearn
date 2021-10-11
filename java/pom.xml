@@ -11,11 +11,12 @@
 
     <modules>
         <module>basic</module>
-        <module>GoF</module>
-        <module>DS</module>
+        <module>gof</module>
+        <module>ds</module>
         <module>spring</module>
         <module>redis</module>
         <module>rocket-mq</module>
+        <module>netty4</module>
     </modules>
 
     <properties>
