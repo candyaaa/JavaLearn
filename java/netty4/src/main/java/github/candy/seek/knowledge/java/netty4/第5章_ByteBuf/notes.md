@@ -30,6 +30,41 @@ ByteBuf也有最大容量，通常是Integer.MAX,当超过这个值的时候会�
 
 将数据存储在直接内存中，是网络传输的最理想方式（不需要再从堆中copy到直接缓存区）可以直接发送，但是如果要在堆内使用DirectBuffer的数据，需要一次copy（将直接内存中的数据copy到堆中）。
 
-### 
+### CompositeByteBuf
 
 为多个ByteBuf提供的一个聚合视图，提供了将多个视图聚合成一个视图的能力 。
+
+对比jdk聚合多个ByteBuffer和netty聚合多个ByteBuf
+
+```java
+@Test
+public void jdkCompositeDemo() {
+    ByteBuffer header = ByteBuffer.allocate(10);
+    ByteBuffer body = ByteBuffer.allocate(10);
+    // 使用一个ByteBuffer数组来保存
+    ByteBuffer[] message = new ByteBuffer[]{header, body};
+    // 使用一个ByteBuffer
+    ByteBuffer compositeBuffer = ByteBuffer.allocate(header.remaining() + body.remaining());
+    compositeBuffer.put(header);
+    compositeBuffer.put(body);
+    compositeBuffer.flip();
+}
+```
+
+```java
+@Test
+public void compositeByteBufDemo() {
+    CompositeByteBuf compositeByteBuf = Unpooled.compositeBuffer();
+    ByteBuf header = Unpooled.buffer(10, 15);
+    ByteBuf body = Unpooled.buffer(10, 15);
+    compositeByteBuf.addComponents(header, body);
+    compositeByteBuf.removeComponent(0);
+    for (ByteBuf byteBuf : compositeByteBuf) {
+        log.info(byteBuf.toString());
+    }
+}
+```
+
+> netty中的实现，不要为每个消息都重新分配内存，消除了没必要的复制.
+
+## TODO

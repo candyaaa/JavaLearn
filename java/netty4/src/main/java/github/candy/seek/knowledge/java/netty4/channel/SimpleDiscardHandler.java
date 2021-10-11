@@ -1,4 +1,4 @@
-package github.candy.java.learn.netty4.channel;
+package github.candy.seek.knowledge.java.netty4.channel;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

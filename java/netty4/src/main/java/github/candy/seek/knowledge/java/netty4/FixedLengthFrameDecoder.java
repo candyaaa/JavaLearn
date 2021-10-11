@@ -1,4 +1,4 @@
-package github.candy.java.learn.netty4;
+package github.candy.seek.knowledge.java.netty4;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

@@ -1,6 +1,6 @@
-package github.candy.java.learn.netty4.channel;
+package github.candy.seek.knowledge.java.netty4.channel;
 
-import github.candy.java.learn.netty4.SomeSocketClientHandler;
+import github.candy.seek.knowledge.java.netty4.SomeSocketClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -13,7 +13,7 @@ import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import github.candy.java.learn.netty4.SomeSocketServerHandler;
+import github.candy.seek.knowledge.java.netty4.SomeSocketServerHandler;
 
 @Slf4j
 public class ChannelHandlerDemo {

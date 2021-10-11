@@ -1,6 +1,7 @@
-package github.candy.java.learn.netty4.第5章_ByteBuf;
+package github.candy.seek.knowledge.java.netty4.第5章_ByteBuf;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.CompositeByteBuf;
 import io.netty.buffer.Unpooled;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
@@ -59,5 +60,17 @@ public class ByteBufDemo {
         compositeBuffer.put(header);
         compositeBuffer.put(body);
         compositeBuffer.flip();
+    }
+
+    @Test
+    public void compositeByteBufDemo() {
+        CompositeByteBuf compositeByteBuf = Unpooled.compositeBuffer();
+        ByteBuf header = Unpooled.buffer(10, 15);
+        ByteBuf body = Unpooled.buffer(10, 15);
+        compositeByteBuf.addComponents(header, body);
+        compositeByteBuf.removeComponent(0);
+        for (ByteBuf byteBuf : compositeByteBuf) {
+            log.info(byteBuf.toString());
+        }
     }
 }

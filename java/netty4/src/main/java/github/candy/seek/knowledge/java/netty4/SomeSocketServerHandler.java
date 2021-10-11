@@ -1,7 +1,8 @@
-package github.candy.java.learn.netty4;
+package github.candy.seek.knowledge.java.netty4;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import java.util.concurrent.atomic.AtomicInteger;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.UUID;
@@ -13,6 +14,8 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 public class SomeSocketServerHandler extends ChannelInboundHandlerAdapter {
+
+    public static volatile AtomicInteger count = new AtomicInteger(0);
 
     private final String result = "form server: %s";
 

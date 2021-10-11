@@ -1,10 +1,10 @@
-package github.candy.java.learn.netty4;
+package github.candy.seek.knowledge.java.netty4.channel;
 
+import github.candy.seek.knowledge.java.netty4.SomeSocketClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
@@ -12,19 +12,33 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
-import io.netty.util.AttributeKey;
 import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import github.candy.seek.knowledge.java.netty4.SomeSocketServerHandler;
 
-/**
- * @author shikui@tidu.com
- * @date 2021/6/29
- */
 @Slf4j
-public class NettyDemo {
+public class ChannelDemo {
     @Test
     public void nettyServer() throws InterruptedException {
+
+        Thread thread = new Thread(() -> {
+            while (true) {
+                log.info("一共收到的消息：{}", SomeSocketServerHandler.count.get());
+                log.info("存储的字符串引用:{}", SimpleDiscardHandler.list.size());
+                log.info("存储的字符串内容:{}", SimpleDiscardHandler.list.toArray());
+
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        thread.start();
+
+
         NioEventLoopGroup parentGroup = new NioEventLoopGroup();
         NioEventLoopGroup childGroup = new NioEventLoopGroup();
 
@@ -32,14 +46,12 @@ public class NettyDemo {
         serverBootstrap.group(parentGroup, childGroup)
                 // config server IO model
                 .channel(NioServerSocketChannel.class)
-                // config server user-defined attribute
-                .attr(AttributeKey.valueOf("name"), "candy")
                 // config server channel
-                .option(ChannelOption.SO_BACKLOG, 1024)
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel ch) {
                         ChannelPipeline pipeline = ch.pipeline();
+                        pipeline.addLast(new MyChannelInboundHandler());
                         pipeline.addLast(new StringDecoder());
                         pipeline.addLast(new StringEncoder());
                         pipeline.addLast(new SomeSocketServerHandler());
@@ -51,7 +63,7 @@ public class NettyDemo {
     }
 
     @Test
-    public void nettyClient(){
+    public void nettyClient() {
         NioEventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
             Bootstrap bootstrap = new Bootstrap();
@@ -65,12 +77,13 @@ public class NettyDemo {
                             pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
                             pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
                             pipeline.addLast(new SomeSocketClientHandler());
+                            pipeline.addLast(new DiscardOutboundHandler());
                         }
                     });
             ChannelFuture future = bootstrap.connect("localhost", 8888).sync();
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
-            if (workerGroup != null){
+            if (workerGroup != null) {
                 workerGroup.shutdownGracefully();
             }
         }
