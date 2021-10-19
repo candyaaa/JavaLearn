@@ -34,6 +34,7 @@ public class SubReqServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
+                            // TODO 注释掉client和server的ProtobufVarint32LengthFieldPrepender、ProtobufVarint32FrameDecoder，然后运行，和预期不一致。为什么会这样？
                             // 针对protobuf协议的 ProtobufVarint32LengthFieldPrepender()所加的长度属性的解码器
                             ch.pipeline().addLast(new ProtobufVarint32FrameDecoder());
                             ch.pipeline().addLast(new ProtobufDecoder(SubscribeReqProto.SubscribeReq.getDefaultInstance()));

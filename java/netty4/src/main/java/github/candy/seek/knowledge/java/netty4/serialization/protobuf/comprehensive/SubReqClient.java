@@ -12,6 +12,7 @@ import io.netty.handler.codec.protobuf.ProtobufDecoder;
 import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import serialization.protobuf.comprehensive.SubscribeRespProto;
 
@@ -19,6 +20,7 @@ import serialization.protobuf.comprehensive.SubscribeRespProto;
  * @author candy
  * @date 2021/10/19
  */
+@Slf4j
 public class SubReqClient {
     public void connect(String host, int port) {
         EventLoopGroup group = new NioEventLoopGroup();
@@ -38,7 +40,13 @@ public class SubReqClient {
                         }
                     });
             ChannelFuture channelFuture = bootstrap.connect(host, port).sync();
-            channelFuture.channel().closeFuture().sync();
+            channelFuture.channel().closeFuture().addListeners(future -> {
+                if (future.isSuccess()) {
+                    log.info("Client shutdown.");
+                } else {
+                    log.info(future.cause().getMessage());
+                }
+            }).sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
