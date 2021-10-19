@@ -15,19 +15,19 @@ import org.junit.Test;
 public class ProtoBufTest {
     @Test
     public void parseTest() {
-        UserProto.User.Builder builder = UserProto.User.newBuilder();
+        github.candy.seek.knowledge.java.netty4.serialization.protobuf.example.UserProto.User.Builder builder = github.candy.seek.knowledge.java.netty4.serialization.protobuf.example.UserProto.User.newBuilder();
         builder.setName("Zhang San");
         builder.setAge(18);
-        builder.setSex(SexEnumProto.SexEnum.MALE);
+        builder.setSex(github.candy.seek.knowledge.java.netty4.serialization.protobuf.example.SexEnumProto.SexEnum.MALE);
 
-        UserProto.User user = builder.build();
+        github.candy.seek.knowledge.java.netty4.serialization.protobuf.example.UserProto.User user = builder.build();
         log.info("Parse before: {}", user);
 
         byte[] byteArray = user.toByteArray();
         log.info("User Byte: {}", Arrays.toString(byteArray));
 
         try {
-            UserProto.User parseAfterUser = UserProto.User.parseFrom(byteArray);
+            github.candy.seek.knowledge.java.netty4.serialization.protobuf.example.UserProto.User parseAfterUser = github.candy.seek.knowledge.java.netty4.serialization.protobuf.example.UserProto.User.parseFrom(byteArray);
             log.info("Parse after: {}", parseAfterUser.toString());
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();

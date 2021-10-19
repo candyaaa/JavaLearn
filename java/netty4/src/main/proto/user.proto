@@ -1,0 +1,11 @@
+syntax = "proto3";
+option java_package = "github.candy.seek.knowledge.java.netty4.serialization.protobuf.example";
+option java_outer_classname = "UserProto";
+
+import "sex_enum.proto";
+
+message User {
+  int32 age = 1;
+  string name = 2;
+  SexEnum sex = 3;
+}
