@@ -1,2 +1,2 @@
-# seek-knowledge
-Record seek knowledge.
+# learn example
+Learn by example.

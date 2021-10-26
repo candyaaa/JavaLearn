@@ -1,0 +1,8 @@
+- 创建ServerBootstrap实例。ServerBootstrap是Netty服务端的启动辅助类，它提供了一系列的方法用于设置服务端启动相关的参数。
+- 设置并绑定Reactor线程池。Netty的Reactor线程池是EventLoopGroup，它实际上是EventLoop的数组。EventLoop的职责是处理所有注册
+  到本线程多路复用器Selector上的Channel，Selector的轮询操作是由绑定的EventLoop线程run方法驱动，在一个循环体内循环执行。
+  EventLoop的职责不仅仅是处理网络I/O事件，用户自定义的task和定时任务task也统一由EventLoop负责处理。
+- 设置并绑定服务端Channel。作为NIO服务端，需要创建ServerSocketChannel，Netty对原生的NIO类库进行了封装， 对应实现是NioServerSocketChannel。
+- 链路建立的时候创建并初始化ChannelPipeline。ChannelPipeline并不是NIO服务端必须的，它本质就是一个负责处理网络事件的职责链，
+  负责管理和执行ChannelHandler的执行策略调度ChannelHandler的执行。典型的网络事件如下
+
