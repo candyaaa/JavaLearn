@@ -1,4 +1,4 @@
-package github.stone98.example.java.netty4.前置知识.nio;
+package github.stone98.example.java.netty4.io.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

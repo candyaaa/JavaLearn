@@ -1,4 +1,4 @@
-package github.stone98.example.java.netty4.前置知识.nio;
+package github.stone98.example.java.netty4.io.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -111,8 +111,9 @@ public class TimeClientHandle implements Runnable {
                     // 对端链路关闭
                     key.cancel();
                     sc.close();
-                } else
-                    ; // 读到0字节，忽略
+                } else {
+                    // 读到0字节，忽略
+                }
             }
         }
 
