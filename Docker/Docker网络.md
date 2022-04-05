@@ -5,7 +5,8 @@
 以下Docker的讲解分为三个部分：
 
 - Docker的原理
-- 理论的验证
+- 运行Docker分析网络的变化
+- 分析容器内和外网通讯流程
 - 附录
 - 参考
 
@@ -23,17 +24,15 @@ Docker有三种开箱即用的网络模式，分别为：
 - `MACVLAN`模式：使用`docker network create -d macvlan`创建，此网络允许为容器指定一个副本网卡，容器通过副本网卡的MAC地址来使用宿主机上的物理设备，在追求性能的场合，这种网络是最好的选择，Docker的MACVLAN只支持Bridge通信，因此在功能表现上与桥接模式相类似。
 - `Overlay`模式：使用`docker network create -d overlay`创建，Docker说的`Overlay`网络实际上就是特指VXLAN，这种网络模式主要用于`Docker Swarm`服务之间的通讯，然而`Docker Swarm`终究败于`Kubernetes`，未能成为主流，所以这种网络模式实际上很少使用。
 
-## 理论的验证
+## 运行`Docker`查看网络的变化
 
-### 运行`Docker`查看网络的变化
-
-- 运行`Docker`，使用`ip addr`查看网卡信息，比平常多了`docker0`网卡，观察信息，注意`docker0`
+- 运行`Docker`，使用`ip addr`查看网卡信息，会发现比平常多了`docker0`网卡。
   - lo是环回接口
   - ens33本地网卡
   - `docker0`:虚拟网桥，state=DOWN、mac=02:42:cf:86:45:df、IPv4=172.17.0.1/16、IPv6=fe80::74b6:5a65:c82d:944e/64
 
 ```bash
-[root@localhost ~]# ip addr
+$ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -55,7 +54,7 @@ Docker有三种开箱即用的网络模式，分别为：
 - 启动tomcat容器
 
 ```bash
-docker run -itd -p 8080:8080 --name mytomcat tomcat
+$ docker run -itd -p 8080:8080 --name mytomcat tomcat
 ```
 
 - 查看宿主机网卡网卡信息
@@ -63,7 +62,7 @@ docker run -itd -p 8080:8080 --name mytomcat tomcat
   - 新增`vethdda859b`虚拟网卡
 
 ```bash
-[root@192 ~]# ip addr
+$ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -93,9 +92,9 @@ docker run -itd -p 8080:8080 --name mytomcat tomcat
   - `eth0`：虚拟网卡
 
 ```bash
-## ip addr命令找不到,安装iproute2
-[root@192 ~]# docker exec -it mytomcat apt-get install -y iproute2
-[root@192 ~]# docker exec -it mytomcat ip addr
+# 安装iproute2，提供IP addr命令
+$ docker exec -it mytomcat apt-get install -y iproute2
+$ docker exec -it mytomcat ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 655apt-get install -y iproute236 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -104,10 +103,10 @@ docker run -itd -p 8080:8080 --name mytomcat tomcat
     link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
     inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
        valid_lft forever preferred_lft forever
-# netstat命令找不到，安装net-tools       
-[root@192 ~]# docker exec -it mytomcat apt install net-tools
+# 安装net-tools，提供netstat命令     
+$ docker exec -it mytomcat apt install net-tools
 # 查看默认网关
-[root@192 ~]# docker exec -it mytomcat netstat -rn
+$ docker exec -it mytomcat netstat -rn
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 0.0.0.0         172.17.0.1      0.0.0.0         UG        0 0          0 eth0
@@ -116,26 +115,26 @@ Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 
 网卡`docker0`的state变成UP,并且新增`vethdda859b`网卡。查看默认网关为`172.17.0.1`，正是`docker0`的`IP`地址。
 
-### 分析容器内和外网通讯流程
+## 分析容器内和外网通讯流程
 
 我们在容器和宿主机分别通过`tcpdump`进行抓包，并且在容器中对外网（`112.80.248.75`）发起`HTTP`请求，分析容器内和外网的网络通讯流程。
 
 - 首先在容器中安装`tcpdump`
 
 ```bash
-[root@192 ~]#apt-get install iputils-ping
+$ apt-get install iputils-ping
 ```
 
 - 容器中发送`HTTP`请求
 
 ```bash
-[root@192 ~]# docker exec -it mytomcat curl www.baidu.com
+$ docker exec -it mytomcat curl www.baidu.com
 ```
 
 - 查看容器`veth0`发送的网络数据包信息：
 
 ```bash
-[root@192 ~]# docker exec -it mytomcat tcpdump -i eth0 -e src 172.17.0.2 and host 112.80.248.75 -n -vv
+$ docker exec -it mytomcat tcpdump -i eth0 -e src 172.17.0.2 and host 112.80.248.75 -n -vv
 ...
 19:46:48.038415 02:42:ac:11:00:02 > 02:42:cf:86:45:df, ethertype IPv4 (0x0800), length 131: (tos 0x0, ttl 64, id 315, offset 0, flags [DF], proto TCP (6), length 117)
     172.17.0.2.45808 > 112.80.248.75.80: Flags [P.], cksum 0x1517 (incorrect -> 0xc39e), seq 0:77, ack 1, win 29200, length 77: HTTP, length: 77
@@ -164,7 +163,7 @@ Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 - 使用`tcpdump`分析`ens33`发送的数据包：
 
 ```bash
-[root@192 ~]# tcpdump -i ens33 -e dst 112.80.248.75 -n -vv
+$ tcpdump -i ens33 -e dst 112.80.248.75 -n -vv
 ...
 03:59:05.154530 00:0c:29:9d:bb:5e > 00:50:56:eb:dd:23, ethertype IPv4 (0x0800), length 131: (tos 0x0, ttl 63, id 59032, offset 0, flags [DF], proto TCP (6), length 117)
     192.168.112.128.45816 > 112.80.248.75.http: Flags [P.], cksum 0x9a2c (incorrect -> 0xf8b5), seq 0:77, ack 1, win 29200, length 77: HTTP, length: 77
@@ -189,7 +188,7 @@ Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 - 使用`tcpdump`分析`veth0`最终接收的数据包
 
 ```bash
-[root@192 ~]# docker exec -it mytomcat tcpdump -i eth0 -e  tcp and dst 172.17.0.2  -n -vv
+$ docker exec -it mytomcat tcpdump -i eth0 -e  tcp and dst 172.17.0.2  -n -vv
 ...
 20:38:04.266572 02:42:cf:86:45:df > 02:42:ac:11:00:02, ethertype IPv4 (0x0800), length 2835: (tos 0x0, ttl 127, id 18446, offset 0, flags [none], proto TCP (6), length 2821)
     112.80.248.76.80 > 172.17.0.2.51150: Flags [P.], cksum 0x1fa8 (incorrect -> 0x5f33), seq 1:2782, ack 78, win 64240, length 2781: HTTP, length: 2781
@@ -221,22 +220,22 @@ Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 
 至此容器与外网的网络交互分析完~
 
-### link
+## link
 
-#### link的介绍
+### link的介绍
 
 `--link`是Docker遗留的功能，在之后的版本可能会被删除，建议使用自定义网络的方式进行容器间的网络通讯。虽然自定义网络不支持像`--link`在容器间共享环境变量。但是我们可以用其他机制更灵活的控制容器间共享环境变量。例如进行文件挂载。
 
-**注意：`--link`的作用是单向的。**
+<font color=red>注意：`--link`的作用是单向的。</font>
 
-#### link的原理
+### link的作用
 
 `--link`能使目标容器通过容器名称与源容器通过容器名称进行通信。分别通过两种方式将源容器的链接信息暴漏给目标容器：
 
-	- 环境变量
-	- 更新`etc/hosts`文件
+- 环境变量
+- 更新`etc/hosts`文件
 
-#### hosts文件
+#### hosts文件方式
 
 分别启动两个tomcat容器，分别为tomcat-01、tomcat-02，并且tomcat-01链接到tomcat-02
 
@@ -249,7 +248,7 @@ $ docker exec -it tomcat-02 apt update
 $ docker exec -it tomcat-02 apt-get install iputils-ping
 ```
 
-查看tomcat-02的`etc/hosts`文件，tomcat-02的hosts文件中有tomcat-01与IP地址的映射关系，这也是为什么tomcat-02与tomcat-01能使用容器名称通信的原因。
+查看tomcat-02的`etc/hosts`文件，其中包含tomcat-01与IP地址的映射关系，这就是为什么他们能直接使用容器名称通信的原因。
 
 ```bash
 $ docker exec -it tomcat-02 ping tomcat-01
@@ -267,7 +266,7 @@ ff02::2	ip6-allrouters
 172.17.0.3	e9d62de11e27
 ```
 
-- 环境变量
+#### 环境变量方式
 
 当我们使用`--link`链接容器时，Docker会根据`--link`参数自动在目标容器中创建环境变量，辅助他们之前的通讯。但是如果敏感数据存储在其中，这可能会产生严重的安全隐患。
 
@@ -307,46 +306,30 @@ TOMCAT_SHA512=a9e3c516676369bd9d52e768071898b0e07659a9ff03b9dc491e53f084b9981a92
 HOME=/root
 ```
 
-### 自定义网络
+## 自定义网络
 
-#### 自定义网络的特性
+虽然Docker提供的默认网络模式使用起来十分简单，但是为了安全性和便利性，在实际开发中推荐使用自定义网络进行容器管理。
 
-创建自定义网络`mynet`
+在Docker提供的默认网络模式中，不可以直接通过容器名称进行通讯，除非使用`--link`将容器进行链接。但是在自定义网络中，默认支持容器名称进行通信。并且不像`--link`是单向的。
 
-- 定义网络模式：`bridge`
-- 子网为`192.168.254.0`
-- 网关为`192.168.254.1`
+> 从 Docker 1.10 版本开始，docker daemon 实现了一个内嵌的 DNS server，使容器可以直接通过容器名称通信。方法很简单，只要在创建容器时使用 `--name` 为容器命名即可。
+> 但是使用 Docker DNS 有个限制：**只能在 user-defined 网络中使用**。也就是说，默认的 bridge 网络是无法使用 DNS 的，所以我们就需要自定义网络。
+
+### 自定义网络的特性
+
+- 创建自定义网络`mynet`
+
+  - 定义网络模式：`bridge`
+
+  - 子网为`192.168.254.0`
+
+  - 网关为`192.168.254.1`
+
+
+- 分别运行tomcat03、tomcat04，并且指定mynet网络，安装需要使用的软件包
 
 ```bash
 $ docker network create --driver bridge --subnet 192.168.254.0/16 --gateway 192.168.254.1 mynet
-$ ip addr
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host 
-       valid_lft forever preferred_lft forever
-2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    link/ether 00:0c:29:9d:bb:5e brd ff:ff:ff:ff:ff:ff
-    inet 192.168.112.133/24 brd 192.168.112.255 scope global noprefixroute dynamic ens33
-       valid_lft 1653sec preferred_lft 1653sec
-    inet6 fe80::74b6:5a65:c82d:944e/64 scope link noprefixroute 
-       valid_lft forever preferred_lft forever
-4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
-    link/ether 02:42:a7:4c:85:35 brd ff:ff:ff:ff:ff:ff
-    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
-       valid_lft forever preferred_lft forever
-5: br-f6af4f3be37a: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
-    link/ether 02:42:31:1c:a2:66 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.254.1/16 brd 192.168.255.255 scope global br-f6af4f3be37a
-       valid_lft forever preferred_lft forever
-```
-
-我们使用ip addr查看宿主机，多了`br-f6af4f3be37a`网卡。
-
-分别运行tomcat03、tomcat04，指定mynet网络
-
-```bash
 $ docker run -itd -p 8083:8080 -v /etc/localtime:/etc/localtime --network mynet  --name  tomcat-03 tomcat
 $ docker exec -it tomcat-03 apt update
 $ docker exec -it tomcat-03 apt-get install iputils-ping -y
@@ -369,11 +352,11 @@ PING tomcat-03 (192.168.0.1) 56(84) bytes of data.
 
 ```
 
-容器之间是互通的，我们可以理解相当于Docker帮我们维护了一个类似DNS的服务，每次使用自定义网络进行创建容器时，Docker会将容器名和IP的映射添加到DNS服务中，当我们通过容器请求时，会先到DNS服务中找到对应的IP然后进行请求。
+容器可以直接通过容器名称进行通讯
 
-#### 自定义网络容器和Docker的bridge网络网络的通讯
+### 自定义网络容器和Docker的bridge网络网络的通讯
 
-我们可以通过docker network connet [OPTIONS] NETWORK CONTAINER命令，将容器加入指定网络
+我们可以通过`docker network connet [OPTIONS] NETWORK CONTAINER`命令，将容器加入指定网络
 
 ```bash
 $ docker network connect mynet tomcat-01
@@ -453,7 +436,13 @@ $ docker network inspect mynet
 
 使用docker network inspect mynet也发现现在mynet网络中存在三个容器了。
 
-### 遇到的一些问题
+## 遇到的一些问题
+
+- ip addr命令找不到，安装iproute2
+
+```bash
+$ docker exec -it mytomcat apt-get install -y iproute2
+```
 
 - 执行apt-update，报错
 
@@ -481,7 +470,7 @@ W: Some index files failed to download. They have been ignored, or old ones used
 }
 ```
 
-重启docker服务
+重启docker服务，就能成功了。
 
 - apt-get update安装软件包时出现
 
@@ -524,26 +513,3 @@ E: Unable to locate package iproute2
 ```
 
 当您使用 install 命令时，apt 包管理器会搜索缓存以获取包和版本信息，然后通过网络从其存储库下载它。如果软件包不在此缓存中，您的系统将无法安装它。当你有一个新安装的 Ubuntu 系统时，缓存是空的。这就是为什么您应该在安装 Ubuntu 或任何其他基于 Ubuntu 的发行版（如 Linux Mint）后立即运行 apt update 命令。即使不是全新安装，您的 apt 缓存也可能已过时。更新它总是一个好主意。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
