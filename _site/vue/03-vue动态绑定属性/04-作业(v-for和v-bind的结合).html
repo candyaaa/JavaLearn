@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 需求：点击我们列表中的哪一项，那么该项的文字变为红色 -->
+		<div id="app">
+			<ul>
+				<li v-for="item in movies">{{item}}</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el:'#app',
+				data:{
+					massage: '你好啊',
+					movies: ['海王','海尔兄弟','火影忍者']
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <span v-if="flag">
+            <label for="username">账号</label>
+            <input type="text" id="username" placeholder="请输入账号">
+        </span>
+        <span v-else>
+            <label for="email">邮箱</label>
+            <input type="text" id="email" placeholder="请输入邮箱">
+        </span>
+        <button @click="flag = !flag">按钮</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const vue = new Vue({
+            el:"#app",
+            data:{
+                flag:true
+            }
+        })
+    </script>
+</body>
+</html>

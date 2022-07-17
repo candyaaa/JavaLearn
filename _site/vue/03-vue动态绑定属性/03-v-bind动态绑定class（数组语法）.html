@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<h2 class="title" :class="[a,b]">{{massage}}</h2>
+			<h2 class="title" :class="getClasses()">{{massage}}</h2>
+		</div>
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el:'#app',
+				data:{
+					massage: '你好啊',
+					a: 'active',
+					b: 'line'
+				},
+				methods:{
+					getClasses:function(){
+						return [this.a,this.b]
+					}
+				}
+			});
+			
+		</script>
+	</body>
+</html>

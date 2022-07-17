@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 这个50px相当于一个key，如果没有加''则回去当成引用解析 -->
+			<h2 :class={fontSize:finalSize,color:finalColor}>{{massage}}</h2>
+		</div>
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el:'#app',
+				data:{
+					massage: '你好啊',
+					finalSize: '50px',
+					finalColor: 'red'
+				}
+			});
+		</script>
+	</body>
+</html>

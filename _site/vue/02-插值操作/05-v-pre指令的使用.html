@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<h2>{{massage}}</h2>
+			<!-- pre的作用就是，我们把{{}}这个原封不动的解析出来，不要做任何的一个解析 -->
+			<h2 v-pre>{{massage}}</h2>
+		</div>
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el:'#app',
+				data:{
+					massage: '你好啊'
+				}
+			});
+		</script>
+	</body>
+</html>

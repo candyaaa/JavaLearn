@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 子属性向父属性传值，但是并不推荐添加元素的那操作方式，会导致管理混乱 -->
+    <div id="app">
+        <div :style='{fontSize: fontSize +"px"}'>{{pmsg}}</div>
+        <menu-item :parr="parr" @enlarge-text='handle($event)'></menu-item>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script type="text/javascript">
+        Vue.component('menu-item',{
+            props: ['parr'],
+            template: `
+                <div>
+                    <ul>
+                        <li :key='index' v-for='(item,index) in parr'>{{item}}</li>
+                    </ul>
+                    <button @click='parr.push("lemon")'>点击</button>
+                    <button @click='$emit("enlarge-text")'>扩展字体</button>
+                    <button @click='$emit("enlarge-text",50)'>扩展字体</button>
+                </div>
+            `
+        });
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                pmsg: '父组件的内容',
+                parr: ['apple','orange','banana'],
+                fontSize: 20
+            },
+            methods: {
+                handle: function(val){
+                    this.fontSize += 5;
+                    if(!(val == "" || val == undefined || val == null)){
+                        this.fontSize += val;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

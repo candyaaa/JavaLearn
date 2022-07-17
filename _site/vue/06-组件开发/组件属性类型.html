@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <menu-item :pstr="pstr" :pmsg="pmsg" :pboolean="true" pnumber="12" :parray="parray"></menu-item>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        Vue.component('menu-item',{
+            props: ['pstr','pmsg','pboolean','pnumber','parray'],
+            template: `
+                <div>
+                    <div>{{pmsg}}</div>
+                    <div>{{pstr}}</div>
+                    <div>{{typeof pboolean}}</div>
+                    <div>{{typeof pnumber}}</div>
+                    <div>
+                        <ul>
+                            <li :key='index' v-for='(item,index) in parray'>这个是第{{index}}个元素，值为：{{item}}</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            `
+        });
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                pmsg: '组件的内容',
+                pstr: 'hello',
+                parray: ['abc','def']
+            }
+        });
+    </script>
+</body>
+</html>
