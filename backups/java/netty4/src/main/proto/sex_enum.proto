@@ -1,9 +1,0 @@
-syntax = "proto3";
-option java_package = "serialization.protobuf.example";
-option java_outer_classname = "SexEnumProto";
-
-enum SexEnum {
-  INVALID = 0;
-  MALE = 1;
-  FEMALE = 2;
-}
