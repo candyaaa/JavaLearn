@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package proto;
+
+// 定义Greeter，你可以当成类
+service UserService {
+  // SayHello方法
+  rpc GetUserById (Request) returns (User) {}
+  // 定义一个SayHelloAgain方法，接受HelloRequest消息，返回HelloReply消息
+}
+
+// 定义请求参数，HelloRequest消息
+message Request {
+  int32 id = 1;
+}
+
+// 定义响应参数，HelloReply消息
+message User {
+  int32 id = 1;
+  string name = 2;
+  int32 age = 3;
+}
