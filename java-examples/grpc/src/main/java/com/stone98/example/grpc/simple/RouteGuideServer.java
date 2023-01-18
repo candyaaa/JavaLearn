@@ -174,7 +174,7 @@ public class RouteGuideServer {
          */
         @Override
         public StreamObserver<Point> recordRoute(final StreamObserver<RouteSummary> responseObserver) {
-            return new StreamObserver<>() {
+            return new StreamObserver<Point>() {
                 int pointCount;
                 int featureCount;
                 int distance;
@@ -220,7 +220,7 @@ public class RouteGuideServer {
          */
         @Override
         public StreamObserver<RouteNote> routeChat(final StreamObserver<RouteNote> responseObserver) {
-            return new StreamObserver<>() {
+            return new StreamObserver<RouteNote>() {
                 @Override
                 public void onNext(RouteNote note) {
                     List<RouteNote> notes = getOrCreateNotes(note.getLocation());

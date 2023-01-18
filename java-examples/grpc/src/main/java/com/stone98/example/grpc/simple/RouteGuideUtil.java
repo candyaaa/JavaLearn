@@ -8,6 +8,7 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.List;
 
+import com.google.protobuf.util.JsonFormat;
 import com.stone98.example.grpc.proto.Feature;
 import com.stone98.example.grpc.proto.FeatureDatabase;
 import com.stone98.example.grpc.proto.Point;
