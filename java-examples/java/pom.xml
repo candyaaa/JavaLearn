@@ -14,7 +14,6 @@
         <module>gof</module>
         <module>ds</module>
         <module>spring</module>
-        <module>redis</module>
         <module>rocket-mq</module>
         <module>netty4</module>
     </modules>
