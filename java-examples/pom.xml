@@ -12,6 +12,7 @@
         <module>grpc</module>
         <module>jvm</module>
         <module>redis</module>
+        <module>juc</module>
     </modules>
 
 
