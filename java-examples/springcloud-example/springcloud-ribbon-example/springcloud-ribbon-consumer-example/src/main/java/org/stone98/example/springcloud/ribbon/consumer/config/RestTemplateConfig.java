@@ -1,0 +1,21 @@
+package org.stone98.example.springcloud.ribbon.consumer.config;
+
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
+
+/**
+ * @Description:
+ * @Author: stone-98
+ * @createTime: 2023年03月09日 14:08:01
+ */
+@Configuration
+public class RestTemplateConfig {
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+}
+

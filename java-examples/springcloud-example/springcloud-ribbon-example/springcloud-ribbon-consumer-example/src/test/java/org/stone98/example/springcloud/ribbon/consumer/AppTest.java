@@ -1,4 +1,4 @@
-package org.stone98.example.springcloud.ribbon;
+package org.stone98.example.springcloud.ribbon.consumer;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
