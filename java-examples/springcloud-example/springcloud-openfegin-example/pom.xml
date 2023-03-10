@@ -15,6 +15,7 @@
     <modules>
         <module>springcloud-openfegin-consumer-example</module>
         <module>springcloud-openfegin-producer-example</module>
+        <module>springcloud-openfegin-consumer-client-example</module>
     </modules>
 
     <properties>
