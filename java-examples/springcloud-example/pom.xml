@@ -15,7 +15,6 @@
     <modules>
         <module>springcloud-ribbon-example</module>
         <module>springcloud-openfegin-example</module>
-        <module>springcloud-openfegin-example/spring-cloud-openfegin-consumer-client-example</module>
     </modules>
 
 
