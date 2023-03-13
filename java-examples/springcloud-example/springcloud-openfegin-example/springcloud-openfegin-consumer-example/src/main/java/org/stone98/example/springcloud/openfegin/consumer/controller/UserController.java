@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.stone98.example.springcloud.openfegin.consumer.client.model.Message;
-import org.stone98.example.springcloud.openfegin.consumer.client.service.IMessageService;
+import org.stone98.example.springcloud.openfegin.consumer.client.service.IMessageClient;
 
 import java.util.List;
 
@@ -20,10 +20,10 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private IMessageService messageSevice;
+    private IMessageClient messageClient;
 
     @GetMapping("getMessageListByUserId/{userId}")
-    public List<Message> getMessageListByUserId(@PathVariable("userId")Integer userId){
-        return messageSevice.listMessageByUserId(userId);
+    public String getMessageListByUserId(@PathVariable("userId")Integer userId){
+        return messageClient.getFirstMessageByUserId(userId);
     }
 }
