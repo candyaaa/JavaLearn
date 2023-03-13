@@ -44,7 +44,7 @@
         </dependency>
         <dependency>
             <groupId>org.stone98.example</groupId>
-            <artifactId>spring-cloud-openfegin-consumer-client-example</artifactId>
+            <artifactId>springcloud-openfegin-consumer-client-example</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

@@ -1,6 +1,5 @@
 package org.stone98.example.juc.stopthread;
 
-import org.junit.jupiter.api.Test;
 
 /**
  * @Description: 中断线程案例
