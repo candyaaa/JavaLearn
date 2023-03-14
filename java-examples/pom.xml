@@ -12,6 +12,8 @@
         <module>grpc</module>
         <module>jvm</module>
         <module>redis</module>
+        <module>juc-example</module>
+        <module>springcloud-example</module>
     </modules>
 
 
